@@ -5,6 +5,9 @@ editor: visual
 ---
 
 ```{r}
+library(tidyr)
+library(ggplot2)
+library(palmerpenguins)
 #dont write your packages into quarto
 
 fx <- expression(x^2)
@@ -25,4 +28,15 @@ dp_da <- D(expr = pa, name = "a")
 a <- 1.2
 
 eval(dp_da)
+```
+
+```{r}
+ggplot2::ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_jitter(aes(color = species))
+```
+
+```{r}
+ggplot2::ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(aes(color = species)) +
+  labs(title = "Penguin Flipper Length by Species", x = "Species", y = "length (mm)")
 ```
