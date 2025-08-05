@@ -5,8 +5,24 @@ editor: visual
 ---
 
 ```{r}
-library(tidyverse)
-library(palmerpenguins)
+#dont write your packages into quarto
 
+fx <- expression(x^2)
 
+df_dx <- D(expr= fx, name = "x")
+
+x <- 3
+
+eval(df_dx)
+
+```
+
+```{r}
+pa <- expression(2*(3*a+2)^4-5)
+
+dp_da <- D(expr = pa, name = "a")
+
+a <- 1.2
+
+eval(dp_da)
 ```
