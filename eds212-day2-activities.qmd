@@ -38,5 +38,6 @@ ggplot2::ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 ```{r}
 ggplot2::ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
   geom_jitter(aes(color = species)) +
-  labs(title = "Penguin Flipper Length by Species", x = "Species", y = "length (mm)")
+  labs(title = "Penguin Flipper Length by Species", x = "Species", y = "length (mm)")+
+  theme_minimal()
 ```
